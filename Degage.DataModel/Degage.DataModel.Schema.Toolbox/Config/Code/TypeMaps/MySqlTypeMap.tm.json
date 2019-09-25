@@ -1,0 +1,35 @@
+﻿{
+  "Name": ".Net-MySql 类型映射",
+  "MapItems": [
+    {
+      "Condition": {
+        "DbType": "varchar"
+      },
+      "MapType": "String"
+    },
+    {
+      "Condition": {
+        "DbType": "nvarchar"
+      },
+      "MapType": "String"
+    },
+    {
+      "Condition": {
+        "DbType": "int"
+      },
+      "MapType": "Int32"
+    },
+    {
+      "Condition": {
+        "DbType": "datetime"
+      },
+      "MapType": "DateTime"
+    },
+    {
+      "Condition": {
+        "DbType": "tinyint"
+      },
+      "MapType": "Boolean"
+    }
+  ]
+}

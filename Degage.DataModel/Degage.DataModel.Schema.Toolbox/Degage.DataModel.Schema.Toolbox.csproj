@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37D83358-E516-47F5-96D2-532E2DE62897}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Degage.DataModel.Schema.Toolbox</RootNamespace>
+    <AssemblyName>Degage.DataModel.Schema.Toolbox</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.1.0.145, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.1.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\refs\Microsoft.Data.ConnectionUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI.Dialog, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\refs\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI.SqlCeDataProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\refs\Microsoft.Data.ConnectionUI.SqlCeDataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServerCe.Client, Version=3.5.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\refs\Microsoft.SqlServerCe.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\ConnectionHistoryConfig.cs" />
+    <Compile Include="ConnectionStringHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionStringHistoryForm.Designer.cs">
+      <DependentUpon>ConnectionStringHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DebutAnimation.cs" />
+    <Compile Include="Enums\SchemaCompareTargetType.cs" />
+    <Compile Include="ExportTargeter\BaseExportTargeterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExportTargeter\BaseExportTargeterControl.Designer.cs">
+      <DependentUpon>BaseExportTargeterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportTargeter\Directory\DirectoryExportTargeterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExportTargeter\Directory\DirectoryExportTargeterControl.Designer.cs">
+      <DependentUpon>DirectoryExportTargeterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportTargeter\Directory\DirectoryExportTargeter.cs" />
+    <Compile Include="ExportTargeter\Directory\DirectoryExportTargeterControlFactory.cs" />
+    <Compile Include="ExportTargeter\ExportTargeterConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportTargeter\ExportTargeterConfigForm.Designer.cs">
+      <DependentUpon>ExportTargeterConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportTargeter\ExportTargeterManager.cs" />
+    <Compile Include="ExportTargeter\IExportTargeterControlFactory.cs" />
+    <Compile Include="Export\BaseExportConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Export\BaseExportConfigControl.designer.cs">
+      <DependentUpon>BaseExportConfigControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\CodeExport\CodeBuildContext.cs" />
+    <Compile Include="Export\CodeExport\CodeSchemaExporter.cs" />
+    <Compile Include="Export\CodeExport\CodeTemplateConfig.cs" />
+    <Compile Include="Export\CodeExport\CodeExportConfig.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\IsPrimaryKey.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\ColumnName.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\TableName.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\TableExplain.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\ColumnExplain.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\NewLine.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\FieldName.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\MapType.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\PropertyName.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\_ContentSymbolManager.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\_IContentSymbol.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\ClassName.cs" />
+    <Compile Include="Export\CodeExport\ContentSymbol\NameSpace.cs" />
+    <Compile Include="Export\CodeExport\PascalSymbolModifier.cs" />
+    <Compile Include="Export\CodeExport\ISymbolModifier.cs" />
+    <Compile Include="Export\CodeExport\TypeMapper.cs" />
+    <Compile Include="Export\CodeExport\TypeMapConfig.cs" />
+    <Compile Include="Export\ExcelExport\ExcelExportStyleTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelExportStyleTemplateForm.Designer.cs">
+      <DependentUpon>ExcelExportStyleTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExportContext.cs" />
+    <Compile Include="Extension\DataGridViewExtension.cs" />
+    <Compile Include="Controls\ItemEditMode.cs" />
+    <Compile Include="Serialization\BinarySerializer.cs" />
+    <Compile Include="Export\CodeExport\CodeExportConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Export\CodeExport\CodeExportConfigControl.Designer.cs">
+      <DependentUpon>CodeExportConfigControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Base\ConfigManager.cs" />
+    <Compile Include="Config\Base\ConfigBase.cs" />
+    <Compile Include="Config\Base\ConfigTagAttribute.cs" />
+    <Compile Include="Config\Base\DefaultStringEncryptor.cs" />
+    <Compile Include="Config\Base\SerializeAssistor.cs" />
+    <Compile Include="Config\Base\TypeInfoProvider.cs" />
+    <Compile Include="Config\Base\TypeInstanceWrapper.cs" />
+    <Compile Include="ConnectionSchemaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionSchemaForm.designer.cs">
+      <DependentUpon>ConnectionSchemaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AwesomeFont.cs" />
+    <Compile Include="Controls\BaseControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\SymbolEditor.cs" />
+    <Compile Include="Controls\Editor\SymbolSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\SymbolSelectorControl.Designer.cs">
+      <DependentUpon>SymbolSelectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Line.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Symbol.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WaitIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Export\ExcelExport\AddGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ExcelExport\AddGroupForm.Designer.cs">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelExportConfig.cs" />
+    <Compile Include="Export\ExcelExport\ExcelExportConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelExportConfigControl.Designer.cs">
+      <DependentUpon>ExcelExportConfigControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelExportGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelExportGroupForm.Designer.cs">
+      <DependentUpon>ExcelExportGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelExportTemplateConfig.cs" />
+    <Compile Include="Export\ExcelExport\ExcelSchemaExporter.cs" />
+    <Compile Include="Export\ExcelExport\ExcelTemplateFormat.cs" />
+    <Compile Include="Export\ExcelExport\ExcelTemplateItemEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ExcelExport\ExcelTemplateItemEditorForm.Designer.cs">
+      <DependentUpon>ExcelTemplateItemEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExcelExport\GroupInfoCollection.cs" />
+    <Compile Include="Export\ExcelExport\OfficeAssistor.cs" />
+    <Compile Include="Export\ExportConfig.cs" />
+    <Compile Include="ExportTargeter\IExportTargeter.cs" />
+    <Compile Include="Enums\ExportType.cs" />
+    <Compile Include="Config\GlobalConfig.cs" />
+    <Compile Include="Export\ISchemaExporter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchemaAssistor.cs" />
+    <Compile Include="SchemaCompare\SchemaCompareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchemaCompare\SchemaCompareForm.designer.cs">
+      <DependentUpon>SchemaCompareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchemaCompare\SchemaDifferenceInfo.cs" />
+    <Compile Include="SchemaCompare\SchemaDifferenceType.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchemaInfoTuple.cs" />
+    <Compile Include="Enums\SchemaLoadType.cs" />
+    <Compile Include="Enums\SchemaType.cs" />
+    <Compile Include="Serialization\JsonSerializer.cs" />
+    <Compile Include="Serialization\XmlSerializer.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionStringHistoryForm.resx">
+      <DependentUpon>ConnectionStringHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportTargeter\BaseExportTargeterControl.resx">
+      <DependentUpon>BaseExportTargeterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportTargeter\Directory\DirectoryExportTargeterControl.resx">
+      <DependentUpon>DirectoryExportTargeterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportTargeter\ExportTargeterConfigForm.resx">
+      <DependentUpon>ExportTargeterConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\BaseExportConfigControl.resx">
+      <DependentUpon>BaseExportConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\CodeExport\CodeExportConfigControl.resx">
+      <DependentUpon>CodeExportConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionSchemaForm.resx">
+      <DependentUpon>ConnectionSchemaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Editor\SymbolSelectorControl.resx">
+      <DependentUpon>SymbolSelectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExcelExport\AddGroupForm.resx">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExcelExport\ExcelExportConfigControl.resx">
+      <DependentUpon>ExcelExportConfigControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExcelExport\ExcelExportGroupForm.resx">
+      <DependentUpon>ExcelExportGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExcelExport\ExcelExportStyleTemplateForm.resx">
+      <DependentUpon>ExcelExportStyleTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExcelExport\ExcelTemplateItemEditorForm.ksh.resx">
+      <DependentUpon>ExcelTemplateItemEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExcelExport\ExcelTemplateItemEditorForm.resx">
+      <DependentUpon>ExcelTemplateItemEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SchemaCompare\SchemaCompareForm.resx">
+      <DependentUpon>SchemaCompareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Config\Code\CodeTemplates\CodeTemplate.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\CodeTemplates\CodeTemplateSchema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\CodeTemplates\DefaultCodeTemplate.ct.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\TypeMaps\MySqlJavascriptTypeMap.tm.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\TypeMaps\OracleTypeMap.tm.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\TypeMaps\TypeMap.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\TypeMaps\TypeMapSchema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Code\TypeMaps\MySqlTypeMap.tm.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Excel\DefaultTemplate.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Excel\ExcelExportTemplate.config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\FontAwesome.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Code\CodeTemplates\JavascriptCodeTemplate.ct.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Code\CodeTemplates\DefaultCodeTemplate.ct.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Code\TypeMaps\SqlServerTypeMap.tm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Config\ConnectionHistory.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="logo.ico" />
+    <None Include="Resources\add.png" />
+    <Content Include="Resources\connect_opened.png" />
+    <Content Include="Resources\connnect_closed.png" />
+    <Content Include="Resources\difference_add.png" />
+    <Content Include="Resources\difference_delete.png" />
+    <Content Include="Resources\difference_modify.png" />
+    <Content Include="Resources\difference_none.png" />
+    <None Include="Resources\edit.png" />
+    <Content Include="Resources\function.png" />
+    <None Include="Resources\history.png" />
+    <Content Include="Resources\procedure.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\remove_red.png" />
+    <None Include="Resources\save.png" />
+    <Content Include="Resources\schema_load_database.png" />
+    <Content Include="Resources\schema_load_file.png" />
+    <Content Include="Resources\selected.png" />
+    <Content Include="Resources\table.png" />
+    <Content Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Export\SchemaExport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Degage.DataModel.Schema.MySql\Degage.DataModel.Schema.MySql.csproj">
+      <Project>{336ebaf4-af31-42e4-80d8-857f7c26e6a6}</Project>
+      <Name>Degage.DataModel.Schema.MySql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Degage.DataModel.Schema.SQLite\Degage.DataModel.Schema.SQLite.csproj">
+      <Project>{fee2782a-75b8-4f17-99f1-897f6e6b1b41}</Project>
+      <Name>Degage.DataModel.Schema.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Degage.DataModel.Schema.SQLServer\Degage.DataModel.Schema.SQLServer.csproj">
+      <Project>{1129e784-909f-49fc-bb0b-3eade026dfac}</Project>
+      <Name>Degage.DataModel.Schema.SQLServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Degage.DataModel.Schema\Degage.DataModel.Schema.csproj">
+      <Project>{6da97dcc-2ba7-4ec0-9154-9fcad863da1c}</Project>
+      <Name>Degage.DataModel.Schema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Degage.DataModel\Degage.DataModel.csproj">
+      <Project>{6bbf69fd-307c-4641-904a-cdb3852bb207}</Project>
+      <Name>Degage.DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties config_4code_4typemaps_4oracletypemap_1tm_1json__JsonSchema="TypeMapSchema.json" config_4code_4codetemplates_4defaultcodetemplate_1ct_1json__JsonSchema="CodeTemplateSchema.json" config_4code_4codetemplates_4codetemplateschema_1json__JsonSchema="http://json-schema.org/draft-04/schema" config_4code_4typemaps_4typemapschema_1json__JsonSchema="http://json-schema.org/draft-04/schema" config_4code_4typemaps_4mysqltypemap_1tm_1json__JsonSchema="TypeMapSchema.json" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>
