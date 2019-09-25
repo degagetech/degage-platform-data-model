@@ -13,7 +13,7 @@ namespace Degage.DataModel.Schema
         /// <summary>
         /// 映射目标的名称
         /// </summary>
-        public String Name { get; set; }
+        public String? Name { get; set; }
         /// <summary>
         /// 映射源自身的名称
         /// </summary>

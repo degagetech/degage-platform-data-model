@@ -6,7 +6,7 @@
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.111" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net40' ">
@@ -18,12 +18,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.Composition" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.111" />
   </ItemGroup>
-
-
   <ItemGroup>
     <ProjectReference Include="..\Degage.DataModel.Schema\Degage.DataModel.Schema.csproj" />
-    <ProjectReference Include="..\Degage.DataModel\Degage.DataModel.csproj" />
+   <ProjectReference Include="..\..\Core\Degage.DataModel\Degage.DataModel.csproj" />
   </ItemGroup>
+
 
 </Project>

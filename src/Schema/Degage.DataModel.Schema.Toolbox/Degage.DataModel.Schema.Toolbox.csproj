@@ -432,7 +432,7 @@
       <Project>{6da97dcc-2ba7-4ec0-9154-9fcad863da1c}</Project>
       <Name>Degage.DataModel.Schema</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Degage.DataModel\Degage.DataModel.csproj">
+    <ProjectReference Include="..\..\Core\Degage.DataModel\Degage.DataModel.csproj">
       <Project>{6bbf69fd-307c-4641-904a-cdb3852bb207}</Project>
       <Name>Degage.DataModel</Name>
     </ProjectReference>

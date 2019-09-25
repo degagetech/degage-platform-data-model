@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Degage.DataModel.Schema\Degage.DataModel.Schema.csproj" />
-    <ProjectReference Include="..\Degage.DataModel\Degage.DataModel.csproj" />
+      <ProjectReference Include="..\..\Core\Degage.DataModel\Degage.DataModel.csproj" />
   </ItemGroup>
 
 
