@@ -4,18 +4,21 @@ using System.Text;
 
 namespace Degage.DataModel.Schema
 {
-    public enum SchemaGetType
+    /// <summary>
+    /// Schema 信息提供器类型的集合
+    /// </summary>
+    public enum SchemaProviderType
     {
         /// <summary>
-        /// 从文件获取
+        /// 文件加载
         /// </summary>
         File = 1,
         /// <summary>
-        /// 从特性获取
+        /// 元数据特性
         /// </summary>
         Attribute = 2,
         /// <summary>
-        /// 框架推导
+        /// 结合类型信息自动推导
         /// </summary>
         AutoDeduce = 3
     }
