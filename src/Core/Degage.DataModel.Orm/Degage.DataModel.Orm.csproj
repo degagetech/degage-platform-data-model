@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;MySql</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-SQLite|AnyCPU'">
@@ -22,10 +22,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-SQLite|AnyCPU'">
     <DefineConstants>TRACE;SQLite</DefineConstants>
   </PropertyGroup>
-
-  <ItemGroup Condition="$(DefineConstants.Contains('MySql'))">
-    <PackageReference Include="MySql.Data" Version="8.0.15" />
-  </ItemGroup>
 
   <ItemGroup Condition="$(DefineConstants.Contains('Oracle'))">
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.6" />

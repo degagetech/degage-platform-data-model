@@ -5,8 +5,26 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;SQLite</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Degage.DataModel.Orm\DbProvider\SQLiteDbProvider.cs" Link="SQLiteDbProvider.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.111" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Degage.DataModel.Orm\Degage.DataModel.Orm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="test.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

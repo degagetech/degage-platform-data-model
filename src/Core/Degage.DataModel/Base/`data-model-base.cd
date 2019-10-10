@@ -21,7 +21,7 @@
       <FileName>Base\IDataActionResult.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Degage.DataModel.IDataActionResult&lt;T&gt;" Collapsed="true">
+  <Interface Name="Degage.DataModel.IDataActionResult&lt;T&gt;">
     <Position X="2.5" Y="5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
@@ -32,7 +32,7 @@
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IDataCollection.cs</FileName>
+      <FileName>Base\IDataCollection.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Degage.DataModel.IDataCollection&lt;T&gt;">
