@@ -46,7 +46,7 @@ namespace Degage.DataModel.Orm
             AnalyingIn<T1>(driver.DbProvider, filter, driver.SQLComponent, values);
             return driver;
         }
-        public static IDriver<T> In<T>(this IDriver<T> driver, Expression<Func<T, Object>> filter, Object[] values)
+        public static IDriver<T> In<T>(this IDriver<T> driver, Expression<Func<T, Object>> filter,params Object[] values)
             where T : class
         {
             driver.SQLComponent.AppendWhere();
@@ -67,7 +67,7 @@ namespace Degage.DataModel.Orm
         /// <param name="whereSqlWithFormat">例如 t={0}</param>
         /// <param name="values"></param>
         /// <returns></returns>
-        public static IDriver Where(this IDriver driver, String whereSqlWithFormat, params Object[] values)
+        public static IDriver<T> Where<T>(this IDriver<T> driver, String whereSqlWithFormat, params Object[] values) where T:class
         {
             String sql = whereSqlWithFormat;
             List<DbParameter> parameters = null;

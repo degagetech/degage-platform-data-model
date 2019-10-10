@@ -41,6 +41,23 @@ namespace Degage.DataModel.Orm.Example
                 ShowUserInfo(info);
             });
 
+            NewLine();
+            ShowTextInfo(" Select infos with where sql:" + Environment.NewLine, ConsoleColor.Yellow);
+            userInfos = proivder.Select<TestUser>().Where("id={0}","1").ToList();
+            userInfos.ForEach(info =>
+            {
+                ShowUserInfo(info);
+            });
+
+
+            NewLine();
+            ShowTextInfo(" Select infos with in:" + Environment.NewLine, ConsoleColor.Yellow);
+            userInfos = proivder.Select<TestUser>().In(t => t.Age, 18, 19, 20).ToList();
+            userInfos.ForEach(info =>
+            {
+                ShowUserInfo(info);
+            });
+
 
             //-------------------------------------------------insert info----------------------------------------------------------
             ShowTextInfo(Environment.NewLine + "Insert a user info:", ConsoleColor.Yellow);
