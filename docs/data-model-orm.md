@@ -19,8 +19,8 @@ Hi,Every one.
 
 - [查询](#query)
 - [插入](#insert)
-- [更新](#更新)
-- [删除](#删除)
+- [更新](#update)
+- [删除](#delete)
 
 - [支持的操作以及正确的调用顺序](#api)
 
@@ -94,7 +94,7 @@ userInfos = proivder.Query<TestUser>("select * from test_user where id=1").ToLis
 
 但是，我们并不建议您这么做，使用框架一部分原因，在于屏蔽数据源的差异性，假如您的 SQL 具有特异性，也许会为后续的迁移工作带来麻烦，而框架会处理这些。
 
-另外筛选条件也是支持 SQL 的，但是我们希望参数的值被直接拼接，而是传入框架由我们处理。
+另外筛选条件也是支持 SQL 的，但是我们不希望参数的值被直接拼接，而是传入框架由我们处理。
 
 ```c#
 userInfos = proivder.Select<TestUser>().Where("id={0}","1").ToList();
@@ -120,19 +120,124 @@ userInfos = proivder.Select<TestUser>().In(t => t.Age, 18, 19, 20).ToList();
 
 ###### 插入操作 <a id="insert"> </a>
 
-//...
+现在我们需要向表中插入一条记录：
+
+```c#
+   TestUser newUser = /...
+   var affect = proivder.Insert(newUser).ExecuteNonQuery();
+```
+
+但是请注意，框架不会检查特定字段是否符合限制（比如向非空的字段插入空），而是在发生错误后将异常抛出，用于你调式、处理。
+
+批量插入：
+
+```c#
+ proivder.BatchInsert(objs)..ExecuteNonQuery();
+```
+
+在这里你需要注意，不同数据库驱动程序，对每次能提交的 SQL 大小都具有限制，使用批量插入，我们很容易在不经意间超出此限制（每次插入过多的对象，另外对象字段的个数也会影响）。
 
 ###### 更新操作 <a id="update"> </a>
 
-//...
+假设我们需要更新某一个用户的描述信息：
+
+```c#
+affect = proivder.
+  Update<TestUser>
+  (
+    () => 
+    new TestUser 
+     {
+       Descrption = "New Desc " + DateTime.Now.ToString() 
+     }
+   ).Where(t => t.Id == "1").ExecuteNonQuery();
+```
+
+可以看到，代码复杂了些，但是并不晦涩，后面的 *Where* 条件容易理解，而 *Update* 的第一个参数通过构造一个 TestUser 对象，方便你设置需要更新的字段，新的值可以是常量也可以是另外一个函数调用、表达式。
 
 ###### 删除操作 <a id="delete"> </a>
 
-//...
+当我们需要删除一些数据的时候：
+
+```c#
+ affect = proivder.Delete<TestUser>().
+            Where(t => t.Name == "John Wang").
+            ExecuteNonQuery();
+```
 
 ###### 支持的操作以及正确的调用顺序 <a id="api"> </a>
 
-//...
+Level 越小的操作，应该置于调用链越前的位置。
+
+**Level:0**    返回值均为 IDriver<T>
+
+- Select<T>()
+
+- Query<T>(String sql)
+
+- Insert<T>(T obj);
+
+- BatchInsert<T>(IEnumable<T> objs)
+
+- Delete<T>()
+
+- Update<T>(Expression<Func<T>> regenerator)
+
+  
+
+**Level:1**   返回值均为 IDriver<T>
+
+- Where(Expression<Func<T, Boolean>> predicate)
+
+- Where(String whereSql, IEnumerable<DbParameter> dbParameters = null)
+
+- OrWhere(Expression<Func<T, Boolean>> predicate)
+
+- In<T>(Expression<Func<T, Object>> filter,params Object[] values)
+
+- OrIn<T>(Expression<Func<T, Object>> filter, Object[] values)
+
+- JoinOn<T1>(Expression<Func<T, T1, Boolean>> predicate)    
+
+- JoinWhere<T1>(Expression<Func<T, T1, Boolean>> predicate) 
+
+- IDriver<T> Page<T>(Expression<Func<T, Object>> sorter, Int32 start, Int32   count, Boolean asc = true)
+
+   请注意，此操作目前只适用于 MySql 数据库，尚未适配其他数据库，若有需要您可以向  IDriver<T> 接口添   加扩展方法。
+
+  
+
+**Level:3**
+
+- ISelectVector<T> ExecuteReader(String connectionString = null)  
+
+  override1：DbTransaction transaction
+
+  override2：DbConnection connection
+
+- Object ExecuteScalar(String connectionString = null)
+
+  同上
+
+- Int32 ExecuteNonQuery(DbTransaction transaction)
+
+  同上
+
+- List<T> ToList<T>(String connectionString = null)
+
+  同上
+
+- T[] ToArray<T>(String connectionString = null) 
+
+  同上
+
+- T ToFirstOrDefault<T>(String connectionString = null) 
+
+  同上
+
+-  Int32 Count(String columnName = null, DbConnection connection = null)
+
+  
 
 ------
 
@@ -143,7 +248,7 @@ userInfos = proivder.Select<TestUser>().In(t => t.Age, 18, 19, 20).ToList();
 
 
 ****
-若有兴趣一起完善此工具，您可以通过TIM扫描下面的二维码，添加时请备注您最得意的开源项目的地址。
+若有兴趣一起完善此框架，您可以通过TIM扫描下面的二维码，添加时请备注您最得意的开源项目的地址。
 
 <p>
 <img width='150'  src="contact-tim.jpg" >

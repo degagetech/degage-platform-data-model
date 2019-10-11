@@ -43,7 +43,7 @@ namespace Degage.DataModel.Orm.Example
 
             NewLine();
             ShowTextInfo(" Select infos with where sql:" + Environment.NewLine, ConsoleColor.Yellow);
-            userInfos = proivder.Select<TestUser>().Where("id={0}","1").ToList();
+            userInfos = proivder.Select<TestUser>().Where("id={0}", "1").ToList();
             userInfos.ForEach(info =>
             {
                 ShowUserInfo(info);
@@ -70,12 +70,22 @@ namespace Degage.DataModel.Orm.Example
                 Descrption = "Remark:New User at " + DateTime.Now.ToString()
             };
             ShowUserInfo(newUser, ConsoleColor.White);
-            var affect = proivder.Insert(newUser).ExecuteNonQuery(); ;
+            var affect = proivder.Insert(newUser).ExecuteNonQuery();
+
+            ShowTextInfo(" Affect row count is " + affect.ToString(), ConsoleColor.Green);
+
+
+            //-------------------------------------------------update info----------------------------------------------------------
+            ShowTextInfo(Environment.NewLine + "update a user info when id is 1:", ConsoleColor.Yellow);
+            affect = proivder.Update<TestUser>(() => new TestUser { Descrption = "New Desc " + DateTime.Now.ToString() }).Where(t => t.Id == "1").ExecuteNonQuery();
             ShowTextInfo(" Affect row count is " + affect.ToString(), ConsoleColor.Green);
 
 
 
-
+            //-------------------------------------------------delete info----------------------------------------------------------
+            ShowTextInfo(Environment.NewLine + "delete  user infos when name is 'John Wang':", ConsoleColor.Yellow);
+            affect = proivder.Delete<TestUser>().Where(t => t.Name == "John Wang").ExecuteNonQuery();
+            ShowTextInfo(" Affect row count is " + affect.ToString(), ConsoleColor.Green);
 
 
         }
