@@ -19,7 +19,7 @@ namespace Degage.DataModel
         /// <summary>
         /// 获取此操作所在的同级的操作链
         /// </summary>
-        IList<IDataAction> ActionChain { get; }
+        IList<IDataAction> Chain { get; }
 
         /// <summary>
         /// 此操作表示的公式
