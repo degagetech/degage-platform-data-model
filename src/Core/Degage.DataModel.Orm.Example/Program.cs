@@ -26,8 +26,8 @@ namespace Degage.DataModel.Orm.Example
             });
             NewLine();
 
-            ShowTextInfo(" Select infos with where （Id=2）:" + Environment.NewLine, ConsoleColor.Yellow);
-            userInfos = proivder.Select<TestUser>().Where(t => t.Id == "2").ToList();
+            ShowTextInfo(" Select infos with where （Name=\"John Wang\" AND Age>=20）:" + Environment.NewLine, ConsoleColor.Yellow);
+            userInfos = proivder.Select<TestUser>().Where(t => t.Name == "John Wang" && t.Age >= 20).ToList();
             userInfos.ForEach(info =>
             {
                 ShowUserInfo(info);

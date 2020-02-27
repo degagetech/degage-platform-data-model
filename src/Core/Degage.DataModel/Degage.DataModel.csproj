@@ -14,5 +14,9 @@
     <Reference Include="System.ComponentModel.Composition" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SQL\" />
+    <Folder Include="NoSQL\" />
+  </ItemGroup>
 
 </Project>
