@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Degage.DataModel
 {
-    public interface IDataCollection/*:IQueryable, IQueryProvider*/
+    public interface IDataAction<T>:IDataAction where T:class
     {
+       
     }
 }

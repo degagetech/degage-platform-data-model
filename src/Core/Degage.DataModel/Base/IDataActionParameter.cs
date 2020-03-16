@@ -5,7 +5,11 @@ using System.Text;
 
 namespace Degage.DataModel
 {
-    public interface IDataCollection/*:IQueryable, IQueryProvider*/
+    public interface IDataActionParameter
     {
+        public String Name { get; set; }
+        public Object Value { get; set; }
+
     }
 }
+

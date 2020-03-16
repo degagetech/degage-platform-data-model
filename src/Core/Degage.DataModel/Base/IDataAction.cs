@@ -25,7 +25,7 @@ namespace Degage.DataModel
         /// 此操作表示的公式
         /// </summary>
         String Formula { get; }
-
-
     }
+
+
 }
