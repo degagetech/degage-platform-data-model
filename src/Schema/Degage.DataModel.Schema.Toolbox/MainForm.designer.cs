@@ -390,7 +390,8 @@
             // 
             // _pbarExportProcess
             // 
-            this._pbarExportProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._pbarExportProcess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._pbarExportProcess.Location = new System.Drawing.Point(0, 668);
             this._pbarExportProcess.Margin = new System.Windows.Forms.Padding(0);
             this._pbarExportProcess.Name = "_pbarExportProcess";

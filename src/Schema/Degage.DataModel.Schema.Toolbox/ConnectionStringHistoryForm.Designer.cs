@@ -33,10 +33,10 @@
             this._btnCannel = new System.Windows.Forms.Button();
             this._btnConfirm = new System.Windows.Forms.Button();
             this._dgvHistory = new System.Windows.Forms.DataGridView();
-            this._btnSaveHistory = new System.Windows.Forms.Button();
-            this._btnRemove = new System.Windows.Forms.Button();
             this._colProviderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._colConnectionString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._btnSaveHistory = new System.Windows.Forms.Button();
+            this._btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._dgvHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,8 +93,21 @@
             this._dgvHistory.Size = new System.Drawing.Size(559, 244);
             this._dgvHistory.TabIndex = 41;
             // 
+            // _colProviderName
+            // 
+            this._colProviderName.FillWeight = 47.71573F;
+            this._colProviderName.HeaderText = "提供器名称";
+            this._colProviderName.Name = "_colProviderName";
+            // 
+            // _colConnectionString
+            // 
+            this._colConnectionString.FillWeight = 152.2842F;
+            this._colConnectionString.HeaderText = "连接字符串";
+            this._colConnectionString.Name = "_colConnectionString";
+            // 
             // _btnSaveHistory
             // 
+            this._btnSaveHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._btnSaveHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnSaveHistory.FlatAppearance.BorderSize = 0;
             this._btnSaveHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -108,6 +121,7 @@
             // 
             // _btnRemove
             // 
+            this._btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnRemove.FlatAppearance.BorderSize = 0;
             this._btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -118,18 +132,6 @@
             this._btnRemove.TabIndex = 43;
             this._btnRemove.UseVisualStyleBackColor = true;
             this._btnRemove.Click += new System.EventHandler(this._btnRemove_Click);
-            // 
-            // _colProviderName
-            // 
-            this._colProviderName.FillWeight = 47.71573F;
-            this._colProviderName.HeaderText = "提供器名称";
-            this._colProviderName.Name = "_colProviderName";
-            // 
-            // _colConnectionString
-            // 
-            this._colConnectionString.FillWeight = 152.2842F;
-            this._colConnectionString.HeaderText = "连接字符串";
-            this._colConnectionString.Name = "_colConnectionString";
             // 
             // ConnectionStringHistoryForm
             // 

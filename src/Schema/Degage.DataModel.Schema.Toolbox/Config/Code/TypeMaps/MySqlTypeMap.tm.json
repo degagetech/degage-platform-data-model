@@ -21,6 +21,12 @@
     },
     {
       "Condition": {
+        "DbType": "bigint"
+      },
+      "MapType": "Int64"
+    },
+    {
+      "Condition": {
         "DbType": "datetime"
       },
       "MapType": "DateTime"

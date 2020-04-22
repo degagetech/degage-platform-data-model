@@ -94,6 +94,7 @@
             this._btnEditorConnectionString.TabIndex = 8;
             this._btnEditorConnectionString.Text = "编辑...";
             this._btnEditorConnectionString.UseVisualStyleBackColor = true;
+            this._btnEditorConnectionString.Click += new System.EventHandler(this._btnEditorConnectionString_Click);
             // 
             // button1
             // 
@@ -103,6 +104,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "编辑...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 

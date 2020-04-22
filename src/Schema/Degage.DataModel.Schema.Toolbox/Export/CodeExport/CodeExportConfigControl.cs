@@ -238,5 +238,15 @@ namespace Degage.DataModel.Schema.Toolbox
         {
             this._exportConfig.CodeNameSpace = this._tbNamespace.Text;
         }
+
+        private void _btnEditorConnectionString_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

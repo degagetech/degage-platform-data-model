@@ -95,6 +95,7 @@
             this.Controls.Add(this._plContainer);
             this.Controls.Add(this._btnCancel);
             this.Controls.Add(this._btnConfirm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExportTargeterConfigForm";
