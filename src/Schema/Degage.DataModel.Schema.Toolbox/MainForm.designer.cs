@@ -637,6 +637,7 @@
             // 
             // _btnLookHistory
             // 
+            this._btnLookHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._btnLookHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this._btnLookHistory.FlatAppearance.BorderSize = 0;
             this._btnLookHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -804,6 +805,8 @@
             // 
             // _cbConnectionString
             // 
+            this._cbConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._cbConnectionString.BackColor = System.Drawing.Color.White;
             this._cbConnectionString.Font = new System.Drawing.Font("微软雅黑", 10F);
             this._cbConnectionString.FormattingEnabled = true;
