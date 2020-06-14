@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Dynamic;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -59,6 +60,10 @@ namespace Degage.DataModel.Orm
             {
                 DbCommand command = dbProvider.DbCommand();
                 ExceutePrepare(connection, command, sql, paras);
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
                 result = command.ExecuteScalar();
                 command.Parameters.Clear();
             }
@@ -83,6 +88,40 @@ namespace Degage.DataModel.Orm
             return table.SelectSQL<T>(sql);
         }
 
+        public static DataTable Query(this DbProvider provider, String sql, DbParameter[] paras = null, DbConnection connection = null)
+        {
+            Table table = new Table(provider);
+            return table.Query(sql, paras, connection);
+        }
+
+        public static List<dynamic> QueryDynamic(this DbProvider provider, String sql, DbParameter[] paras = null, DbConnection connection = null)
+        {
+            List<dynamic> result = new List<dynamic>();
+            var table = Query(provider, sql, paras, connection);
+            if (table.Rows != null && table.Rows.Count > 0)
+            {
+                foreach (DataRow item in table.Rows)
+                {
+                    var drow = new DynamicRow(item);
+                    result.Add(drow);
+                }
+            }
+            return result;
+        }
+
+        private sealed class DynamicRow : DynamicObject
+        {
+            private readonly DataRow _row;
+
+            internal DynamicRow(DataRow row) { _row = row; }
+
+            public override bool TryGetMember(GetMemberBinder binder, out object result)
+            {
+                var retVal = _row.Table.Columns.Contains(binder.Name);
+                result = retVal ? _row[binder.Name] : null;
+                return retVal;
+            }
+        }
 
         public static IDriver<T> Delete<T>(this DbProvider provider) where T : class
         {
